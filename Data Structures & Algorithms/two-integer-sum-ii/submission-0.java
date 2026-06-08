@@ -5,14 +5,14 @@ class Solution {
         int ptx_e = numbers.length-1;
 
         while(numbers[ptx_s]+numbers[ptx_e]!= target){
-            int possible_sub = numbers[ptx_s]+numbers[ptx_e];
+            int possible_sum = numbers[ptx_s]+numbers[ptx_e];
             //the values at this indexes does not add up to target
     
-            //check if possible_sub is greater than target
-            if(possible_sub > target){
+            //check if possible_sum is greater than target
+            if(possible_sum > target){
                 //smallest + highest values exceed target so decrement highst value
                 ptx_e--;
-            }else if(possible_sub < target){
+            }else if(possible_sum < target){
                 //smallest + highest values less than target to increment smallest value
                 ptx_s++;
             }
