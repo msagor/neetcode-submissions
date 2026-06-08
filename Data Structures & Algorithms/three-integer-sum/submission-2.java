@@ -1,5 +1,6 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
+        //implemented myself did not work, then AI did minor fix
         //first you need to solve TwoSum II problem (LC #15)
 
         //first sort the array in ascending order
