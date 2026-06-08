@@ -22,6 +22,8 @@ class Solution {
             //need to move one bar,
             //it could be bar i or bar j.
             //we need to move the smaller bar.
+            //when bar1 moves, we do i++
+            //when bar2 moves, we do j--;
             if(bar1<bar2){
                 i++;
             }else{
