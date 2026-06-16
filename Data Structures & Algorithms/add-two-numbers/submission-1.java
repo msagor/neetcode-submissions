@@ -11,32 +11,37 @@
 
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        
+
+        //implemented myself without help of AI
         //so they reversed the LL so that a number 321 is actually organized as 1 -> 2 -> 3 order
         //this is good so that they are bsically giving us access to the ones digits first,
 
         //variable to keep track of carry
         int carry = 0;
 
-    
+        //resultant head
         ListNode resHead = null;
-        int iteration = 0;
+
+        //head that moves forward in every iteration
         ListNode head = null;
+
+        //while loop iteration
+        int iteration = 0;
 
         //an empty dummy listnode
         ListNode dummy = new ListNode(0, null);
 
         while(l1!=null && l2!=null){
             
-            System.out.println("iteration - " + iteration + " l1 - " + l1.val + " " + "l2 - " + l2.val + " " + "carry - " + carry);
-
             if(iteration==0){
                 //init head for this iteration
                 head = new ListNode();
                 resHead=head;
                 iteration++;
             }else{
-                //move head forward
+                //for every iteration this is where we move head forward
+                //we assign a new node for next
+                //move the head forward now
                 head.next = new ListNode();
                 head = head.next;
                 iteration++;
@@ -54,7 +59,6 @@ class Solution {
 
                 //assign carry
                 carry = sum/10;
-                System.out.println("carry - " + carry);
                 //carry = Integer.parseInt(String.valueOf(Integer.toString(sum).charAt(0)));
             
             }else{
@@ -64,9 +68,6 @@ class Solution {
                 //reset carry
                 carry = 0;
             }
-
-            //reassign head to new node
-            head.next = new ListNode();
 
             //move l1 and l2
             l1 = l1.next;
@@ -78,14 +79,13 @@ class Solution {
             }else if(l1!=null && l2==null){
                 l2 = dummy;
             }else if(l1==null && l2==null){
+                //coming here means we need to break the while loop
+                //before doing that we need to take care of carry
                 //check if carry has value
                 if(carry!=0){
                     head.next = new ListNode();
                     head = head.next;
                     head.val = carry;
-                    System.out.println("came here 1");
-                }else{
-                    head.next = null;
                 }
                 break;
             }
