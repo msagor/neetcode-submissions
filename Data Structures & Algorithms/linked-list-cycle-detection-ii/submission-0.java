@@ -10,6 +10,7 @@
  * }
  */
 public class Solution {
+    //not in NeetCode, implemented myself in LeetCode
     public ListNode detectCycle(ListNode head) {
 
         if(head==null || head.next==null){
