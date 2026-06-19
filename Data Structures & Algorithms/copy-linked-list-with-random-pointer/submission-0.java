@@ -14,6 +14,7 @@ class Node {
 */
 
 class Solution {
+    //watched video then watched implementation then typed myself
     public Node copyRandomList(Node head) {
         //create a hashmap where we store old to new objects
         Map<Node, Node> oldToNewNodes = new HashMap<Node, Node>();
