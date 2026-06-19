@@ -1,6 +1,7 @@
 class Solution {
     public List<Integer> findAnagrams(String s, String p) {
-        //implemented in LeetCode coz NeetCode dont have this problme
+        //implemented in LeetCode coz NeetCode dont have this problem
+        //https://leetcode.com/problems/find-all-anagrams-in-a-string/
         //read the solution then implemented myself
         //we need to sort the pattern p string
         //then run a sliding window of length(p) and move one place at a time
