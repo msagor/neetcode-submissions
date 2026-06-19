@@ -10,6 +10,7 @@
  */
 
 class Solution {
+    //watched video then implemented myself entirely
     public ListNode mergeKLists(ListNode[] lists) {
 
         if(lists.length==0){
