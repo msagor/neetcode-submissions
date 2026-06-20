@@ -4,7 +4,7 @@ class Solution {
     //Return true if s2 contains a permutation of s1, or false otherwise. 
     //That means if a permutation of s1 exists as a substring of s2, then return true.
 
-    //this isliterally Valid Anagram problme with a twist of sliding window.
+    //this is literally Valid Anagram problme with a twist of sliding window.
 
     public boolean checkInclusion(String s1, String s2) {
         //we move a sliding window of size s1 to and check it they are anagrams
