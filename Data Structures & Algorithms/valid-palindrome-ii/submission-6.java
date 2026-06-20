@@ -1,6 +1,7 @@
 class Solution {
     public boolean validPalindrome(String s) {
         //valid palindrome with at most one deletion
+        //watched the video then implemented myself
 
         if(isPalindrome(s)){
             return true;
@@ -12,20 +13,19 @@ class Solution {
         while(left<right){
         
             if(s.charAt(left)!=s.charAt(right)){
+                
                 //get the left string
                 String subS_left = s.substring(left, right);
 
                 //get the right string
                 String subS_right = s.substring(left+1, right+1);
 
-                System.out.println("subS_left - " + subS_left);
-                System.out.println("subS_right - " + subS_right);
-
                 if(!isPalindrome(subS_left) && !isPalindrome(subS_right)){
                     return false;
                 }
             }
 
+            //when palindrome is good, we come here
             left++;
             right--;
         }
