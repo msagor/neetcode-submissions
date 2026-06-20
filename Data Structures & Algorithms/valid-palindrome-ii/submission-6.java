@@ -20,6 +20,8 @@ class Solution {
                 //get the right string
                 String subS_right = s.substring(left+1, right+1);
 
+                //since we have at most one deletion available,
+                //simply checking is sufficient
                 if(!isPalindrome(subS_left) && !isPalindrome(subS_right)){
                     return false;
                 }
