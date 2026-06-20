@@ -2,6 +2,9 @@ class Solution {
 
     public void sortColors_(int[] nums) {
         //watched solution video then implemented myself
+        //tried to always increment i inside while loop,
+        //but the correct solution prevent incrementing i when swapping 2.
+        
         //notice the edge case handing for swap between 2 and 0
         //there are only three possibilities 0, 1, 2
         //we will use two pointers to sort 0s and 2s, 1 will sort itself
