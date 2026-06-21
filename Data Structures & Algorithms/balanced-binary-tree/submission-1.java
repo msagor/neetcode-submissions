@@ -14,6 +14,8 @@
  * }
  */
 
+//implemented myself
+//after you solve Invert Binary Tree, Maximum Depth of Binary Tree, Diameter of Binary Tree - this problem is easy
 class Solution {
 
     boolean result = true;
