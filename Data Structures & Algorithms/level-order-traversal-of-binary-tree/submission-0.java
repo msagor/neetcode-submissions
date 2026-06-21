@@ -48,6 +48,7 @@ class Solution {
         result.get(level).add(node.val);
 
         // Recursively process the left child at the next level
+        // this call populates the inner list
         dfs(node.left, level + 1, result);
 
         // Recursively process the right child at the next level
