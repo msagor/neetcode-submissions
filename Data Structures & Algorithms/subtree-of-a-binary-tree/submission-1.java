@@ -14,6 +14,7 @@
  * }
  */
 
+//read solution then implemented myself
 class Solution {  
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         return helper(root, subRoot);
