@@ -16,6 +16,7 @@
 
 //we need to find the depth (aka height) of binary tree,
 //and while doing that we will compute the diameter as a bi-product
+//binary-tree-diameter and balanced-binary-tree - both problems ascends from depth-of-binary-tree problem
 class Solution {
 
     int res = Integer.MIN_VALUE;
