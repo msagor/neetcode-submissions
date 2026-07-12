@@ -11,6 +11,7 @@
  */
 public class Solution {
     //not in NeetCode, implemented myself in LeetCode
+    //https://leetcode.com/problems/linked-list-cycle-ii/description/
     public ListNode detectCycle(ListNode head) {
 
         if(head==null || head.next==null){
