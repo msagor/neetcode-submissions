@@ -16,6 +16,7 @@
 
 //implemented myself
 //after you solve Invert Binary Tree, Maximum Depth of Binary Tree, Diameter of Binary Tree - this problem is easy
+////binary-tree-diameter and balanced-binary-tree - both problems ascends from depth-of-binary-tree problem
 class Solution {
 
     boolean result = true;
