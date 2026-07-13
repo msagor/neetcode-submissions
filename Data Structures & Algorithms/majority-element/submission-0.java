@@ -1,5 +1,6 @@
 class Solution {
     //watched the video then implemented myself
+    //Boyer-Moore Voting Algorithm
     public int majorityElement(int[] nums) {
         int res = nums[0];
         int current = 0;
