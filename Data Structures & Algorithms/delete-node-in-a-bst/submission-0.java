@@ -13,6 +13,7 @@
  *     }
  * }
  */
+//watched video, watched solution, understood both, then implemented myself with comment
 class Solution {
     public TreeNode deleteNode(TreeNode root, int key) {
         //if root is null. return root
