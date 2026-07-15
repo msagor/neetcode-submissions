@@ -1,6 +1,42 @@
 class Solution {
+
+    public List<List<Integer>> minimumAbsDifference_chatgpt(int[] arr) {
+        
+        // Sort the array so that:
+        // 1. The smallest differences will always be between adjacent elements
+        // 2. The resulting pairs will automatically be in ascending order
+        Arrays.sort(arr);
+        
+        // Store the smallest absolute difference found so far
+        int minDiff = Integer.MAX_VALUE;
+        
+        // Store all pairs that have the minimum difference
+        List<List<Integer>> result = new ArrayList<>();
+        
+        // Step 1: Find the minimum difference between adjacent elements
+        // Since the array is sorted, the minimum absolute difference
+        // can only occur between neighboring elements
+        for (int i = 1; i < arr.length; i++) {
+            int diff = arr[i] - arr[i - 1];
+            minDiff = Math.min(minDiff, diff);
+        }
+        
+        // Step 2: Find all pairs that have the minimum difference
+        for (int i = 1; i < arr.length; i++) {
+            
+            // If the difference between current element and previous element
+            // equals the smallest difference found, add this pair to result
+            if (arr[i] - arr[i - 1] == minDiff) {
+                
+                // Arrays.asList creates a List<Integer> containing the pair
+                result.add(Arrays.asList(arr[i - 1], arr[i]));
+            }
+        }
+        
+        return result;
+    }
+
     //my implementation, this works but long
-    //done on LeetCode - https://leetcode.com/problems/minimum-absolute-difference/
     public List<List<Integer>> minimumAbsDifference(int[] arr) {
         
         Map<Integer, List<List<Integer>>> map = new HashMap<>();
