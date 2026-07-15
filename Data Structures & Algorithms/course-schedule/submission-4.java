@@ -38,7 +38,7 @@ class Solution {
         return true;
     }
 
-
+    //dfs from chatgpt, that works
     public boolean dfs(int course, Set<Integer> visited) {
 
         // Course is already in the current DFS path
@@ -49,8 +49,7 @@ class Solution {
 
         visited.add(course);
 
-        List<Integer> prerequisites =
-                prereqMap.getOrDefault(course, new ArrayList<>());
+        List<Integer> prerequisites = prereqMap.getOrDefault(course, new ArrayList<>());
 
         for (int prereq : prerequisites) {
 
@@ -59,12 +58,15 @@ class Solution {
             }
         }
 
-        // Remove it from the current path
+        // IMPORTANT:
+        // We are done exploring this path.
+        // Remove the course so it can be visited through another path.
         visited.remove(course);
 
         return true;
     }
 
+    //dfs written byme, very close, but doesnt work
     //takes a course, and a empty set and keeps visiting children until loop found
     public boolean dfs_(int course, Set<Integer> visited){
         if(visited.contains(course)){
