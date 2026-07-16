@@ -39,7 +39,7 @@ class Solution {
 
         //we run a for loop from index 1 and mark it as k2
         //in each iteration we compare between k1 and k2
-        for(int i =0; i<list.size(); i++){
+        for(int i =1; i<list.size(); i++){
 
             //get k2 from list
             int k2 = list.get(i);
