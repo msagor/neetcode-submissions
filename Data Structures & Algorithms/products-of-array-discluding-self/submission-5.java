@@ -24,7 +24,7 @@ class Solution {
 
         //populate resultant array
         //for example nums=[1,2,3,4]
-        //would result=[48,24,12,8]
+        //would result=[24,12,8,6]
         for(int k=0; k< nums.length; k++){
             res[k] = (k==0?1:prefix[k-1]) * (k==nums.length-1?1:postfix[k+1]);
         }
