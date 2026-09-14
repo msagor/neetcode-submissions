@@ -53,6 +53,10 @@ class Solution {
                 //we also need to decrement the char at c by 1, the one we added in this iteration.
                 //this is iteration 06 from example below
                 map.put(s.charAt(l), map.get(s.charAt(l))-1);
+
+                //we also remove the char we added in this iteration
+                //because this iteration did not produce result,
+                //hence we will use the same r for next iteration
                 map.put(c, map.get(c)-1);
 
                 //increment l pointer
