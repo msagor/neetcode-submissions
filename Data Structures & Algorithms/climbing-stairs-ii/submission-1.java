@@ -1,19 +1,20 @@
 /*
+//done in leetcode - https://leetcode.com/problems/climbing-stairs-ii/
 //the idea is to continue to compute the min for each step, and reach the end.
 //at the end, return the last slot in the dp array.
-//below is my code that does not work
+//at the  bottom is my code that does not work
 
 costs:  0    1    2    3    4
 dp:     0    2    5    9   13
 
 return dp[4]: 13
 
-Iteration	i	dp[0]	dp[1]	dp[2]	dp[3]	dp[4]
-      	    -	  0	     ∞	     ∞ 	     ∞	     ∞
-   1	    0	  0 	 2	     6	     12	     ∞
-   2	    1	  0	     2	     5	     9	     15
-   3	    2	  0 	 2	     5	     9	     13
-   4	    3	  0	     2	     5	     9	     13
+Iteration	i	 dp[0]	dp[1]	 dp[2]	dp[3]	    dp[4]
+            -	  0	       ∞	  ∞ 	       ∞	     ∞
+   1	      0	  0 	       2	  6	      12	     ∞
+   2	      1	  0	       2	  5	       9	     15
+   3	      2	  0 	       2	  5	       9	     13
+   4	      3	  0	       2	  5	       9	     13
 
 
 */
