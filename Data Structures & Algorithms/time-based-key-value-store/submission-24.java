@@ -1,0 +1,117 @@
+class TimeMap {
+
+    //not a big fan of this questions
+    //examples are unclear
+    public class Tuple{
+        public String x;
+        public int y;
+
+        public Tuple(String x, int y){
+            this.x = x; //value
+            this.y = y; //timestamp
+        }
+    }
+
+    //hashmap of list of tuples
+    Map<String, List<Tuple>> map;
+
+    public TimeMap() {
+        this.map = new HashMap<>();
+    }
+    
+    public void set(String key, String value, int timestamp) {
+        //first check if the map contains the key already
+        if(map.keySet().contains(key)){
+            //key contains so fetch the list of tuples
+            List<Tuple> list = map.get(key);
+
+            //create a tupe
+            Tuple t = new Tuple(value, timestamp);
+            
+            //add the tuple to the list
+            list.add(t);
+
+            //push the list into the map
+            map.put(key, list);
+        }else{
+            //the key is new
+            //create a new list of tuples
+            List<Tuple> list = new ArrayList<>();
+
+            //create a tupe
+            Tuple t = new Tuple(value, timestamp);
+
+            //add the tuple to the list
+            list.add(t);
+
+            //push the list into the map
+            map.put(key, list);
+        }
+    }
+    
+    public String get(String key, int timestamp) {
+        if(map.keySet().contains(key)){
+            //key contains so fetch the list of tuples
+            List<Tuple> list = map.get(key);
+
+            //now do binary search
+            return binarySearchToGetVal(list, 0, list.size()-1, timestamp);
+        }else{
+            return "";
+        }
+        
+    }
+
+    public String binarySearchToGetVal(List<Tuple> list, int left, int right, int target) {
+
+        // No valid timestamp found
+        if (left > right) {
+            return "";
+        }
+
+        int mid = left + (right - left) / 2;
+
+        // Timestamp is too large
+        // Search left
+        if (list.get(mid).y > target) {
+            return binarySearchToGetVal(list, left, mid - 1, target);
+        }
+
+        // Timestamp is valid
+        // Search right for a later valid timestamp
+        String result = binarySearchToGetVal(list, mid + 1, right, target);
+
+        // If we found a later timestamp, use it.
+        // Otherwise, current mid is the best answer.
+        return result.isEmpty()? list.get(mid).x:result;
+    }
+
+
+    //works but harder to understand
+    public String binarySearchToGetVal_(List<Tuple> list, int left, int right, int target) {
+
+        //no solution case
+        if (left > right) {
+            return "";
+        }
+
+        //get mid
+        int mid = left + (right - left) / 2;
+
+        //we hit this case when left, right and mid are same.
+        //aka we are checking one item only.
+        //note that this item can be anywhere in the list 
+        if (left==right && left==mid && list.get(mid).y == target) {
+            return list.get(mid).x;
+        }
+
+        // mid is too big → go left
+        if (list.get(mid).y > target) {
+            return binarySearchToGetVal(list, left, mid - 1, target);
+        }else{
+            // mid is valid candidate → store it, but try to find better on right
+            String rightResult = binarySearchToGetVal(list, mid + 1, right, target);
+            return rightResult.isEmpty() ? list.get(mid).x : rightResult;
+        }
+    }
+}
