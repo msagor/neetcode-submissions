@@ -19,11 +19,6 @@ class Solution {
             Arrays.fill(memo[i], -1);
         }
 
-        //check starting or ending cell
-        if(obstacleGrid[0][0] == 1 || obstacleGrid[ROW-1][COL-1] == 1){
-            return 0;
-        }
-
         //run dfs
         return backtrack(0, 0, obstacleGrid);
     }
