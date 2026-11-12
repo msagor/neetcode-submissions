@@ -62,6 +62,8 @@ class Solution {
             return;
         }
 
+        //memo check
+
         //increment emptyCount for this slot
         emptyCount++;
 
